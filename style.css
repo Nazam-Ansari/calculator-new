@@ -1,0 +1,118 @@
+ /* body{
+    background: #F8FAF8;
+    box-sizing: border-box;
+    /* width: 680px; */
+    
+}  */
+#header{
+    /* margin: 0; */
+    width: 626px;
+    text-align: initial;
+}
+#header h4{
+    color: white;
+    background: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0;
+    width: 630px;
+}
+
+input{
+    background: #FFFF88;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+}
+form{
+    float: left;
+    margin-right: 20px;
+}
+.container form table{
+    border: 2px solid black;
+    /* border-spacing: 0; */
+}
+table tr td{
+    border: 1px solid #C4C7C5;
+   padding: 0;
+}
+.leftBar{
+    width:120px;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.menu{
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.menu td{
+    border: none;
+}
+.row{
+    text-align: initial;
+    width: 626px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    border: 1px solid #E1E1E1;
+}
+.container .row input{
+    height: 30px;
+    border: 1px solid black;
+    border-spacing: 0;
+    display: block;
+}
+.footer{
+    float: left;
+    width: 626px;
+    
+    margin-top: 20px;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    background: #57BB8A;
+    
+}
+.avg input{
+
+    height: 25px;
+    width: 100%;
+    background: #57BB8A;
+    /* color: white; */
+}
+.footer tr td{
+    border: 2px solid black;
+}
+table tr.br{
+    border: 2px solid black;
+    background: #D9EAD3;
+}
+.clr input{
+    background: #57BB8A;
+}
+.clr2 input{
+    background: #D9EAD3;
+}
+.bg input{
+    background: #F3F3F3;
+}
+.heading tr td input{
+    height: 30px;
+    border: 1.5px solid  black;
+   
+}
+.size{
+    width: 538px;
+    text-align: end;
+    font-weight: bold;
+}
+.heading{
+    border-collapse: collapse;
+}

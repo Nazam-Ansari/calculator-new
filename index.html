@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container" id="header">
+        <h4>Rate Calculator</h4>
+    </div>
+    <div class="container">
+        <table class="heading">
+                <tr">
+                    <td class="size">Enter your average miles per gallon:</td>
+                    <td><input type="text" id="g1" ></td>
+                </tr>
+                <tr>
+                    <td class="size">Enter current gas price:</td>
+                    <td><input type="text" id="g2" ></td>
+                </tr>
+                
+            </table>
+        </div>        
+
+        <div class="container">
+            <form action="">
+                <table>
+                    <tr class="menu">
+                        <td>1st Trip</td>
+                        <td>Load#1</td>
+                        <td>Load#2</td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Triple Miles</td>
+                        <td ><input type="text" id="l01" oninput="calculateSum('l01','l02','l03','output0')"></td>
+                        <td><input type="text" id="l11" oninput="calculateSum('l11','l12','l13','output1')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Dead Head / Pickup</td>
+                        <td><input type="text" id="l02" oninput="calculateSum('l01','l02','l03','output0')"></td>
+                        <td><input type="text" id="l12" oninput="calculateSum('l11','l12','l13','output1')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Dead Head / Delivery</td>
+                        <td><input type="text" id="l03"  oninput="calculateSum('l01','l02','l03','output0')"></td>
+                        <td><input type="text" id="l13" oninput="calculateSum('l11','l12','l13','output1')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Total Miles</td>
+                        <td class="bg"><input type="text" id="output0"readonly></td>
+                        <td class="bg"><input type="text" id="output1"readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Rate</td>
+                        <td><input type="text" id="l04" oninput="ratePerMiles('output0','l04','result11')"></td>
+                        <td><input type="text" id="l14" oninput="ratePerMiles('output1','l14','result12')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Weight</td>
+                        <td><input type="text" id="l05" oninput="fuelReduction('l05','result1')"></td>
+                        <td><input type="text" id="l15" oninput="fuelReduction('l15','result2')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Fuel Reduction</td>
+                        <td class="bg"><input type="text" id="result1" readonly></td>
+                        <td class="bg"><input type="text" id="result2" readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Fuel Cost</td>
+                        <td class="bg"><input type="text" id="calculation1"readonly></td>
+                        <td class="bg"><input type="text" id="calculation2" readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Days</td>
+                        <td><input type="text" id="l08" oninput=" trueDayRate('l08','result21','result31')" ></td>
+                        <td><input type="text" id="l18" oninput=" trueDayRate('l18','result22','result32')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Rate Per Mile</td>
+                        <td class="bg"><input type="text" id="result11" readonly></td>
+                        <td class="bg"><input type="text" id="result12" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True RPM</td>
+                        <td class="clr"><input type="text" id="result41" readonly></td>
+                        <td class="clr2"><input type="text" id="result42" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True Day Rate</td>
+                        <td class="clr"><input type="text" id="result31" readonly></td>
+                        <td class="clr2"><input type="text" id="result32" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True Rate</td>
+                        <td class="clr"><input type="text" id="result21" readonly></td>
+                        <td class="clr2"><input type="text" id="result22" readonly></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="container">
+            <form action="">
+                <table>
+                    <tr class="menu">
+                        <td>Backhaul</td>
+                        <td>Load#1</td>
+                        <td>Load#2</td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Triple Miles</td>
+                        <td><input type="text" id="l21" oninput="calculateSum('l21','l22','l23','output2')"></td>
+                        <td><input type="text" id="l31" oninput="calculateSum('l31','l32','l33','output3')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Dead Head / Pickup</td>
+                        <td><input type="text" id="l22" oninput="calculateSum('l21','l22','l23','output2')"></td>
+                        <td><input type="text" id="l32" oninput="calculateSum('l31','l32','l33','output3')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Dead Head / Delivery</td>
+                        <td><input type="text" id="l23" oninput="calculateSum('l21','l22','l23','output2')"></td>
+                        <td><input type="text" id="l33" oninput="calculateSum('l31','l32','l33','output3')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Total Miles</td>
+                        <td class="bg"><input type="text" id="output2"></td>
+                        <td class="bg"><input type="text" id="output3"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Rate</td>
+                        <td><input type="text" id="l24" oninput="ratePerMiles('output2','l24','result13')"></td>
+                        <td><input type="text" id="l34" oninput="ratePerMiles('output3','l34','result14')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Weight</td>
+                        <td><input type="text" id="l25"  oninput="fuelReduction('l25','result3')"></td>
+                        <td><input type="text" id="l35" oninput="fuelReduction('l35','result4')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Fuel Reduction</td>
+                        <td class="bg"><input type="text"  id="result3" readonly></td>
+                        <td class="bg"><input type="text" id="result4" readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Fuel Cost</td>
+                        <td class="bg"><input type="text" id="calculation3" readonly></td>
+                        <td class="bg"><input type="text" id="calculation4" readonly></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Days</td>
+                        <td><input type="text" id="l28" oninput=" trueDayRate('l28','result23','result33')"></td>
+                        <td><input type="text" id="l38" oninput=" trueDayRate('l38','result24','result34')"></td>
+                    </tr>
+                    <tr>
+                        <td class="leftBar">Rate Per Mile</td>
+                        <td class="bg"><input type="text" id="result13" readonly></td>
+                        <td class="bg"><input type="text" id="result14" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True RPM</td>
+                        <td class="clr"><input type="text" id="result43" readonly></td>
+                        <td class="clr2"><input type="text" id="result44" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True Day Rate</td>
+                        <td class="clr2"><input type="text" id="result33" readonly></td>
+                        <td class="clr"><input type="text" id="result34" readonly></td>
+                    </tr>
+                    <tr class="br">
+                        <td class="leftBar">True Rate</td>
+                        <td class="clr2"><input type="text" id="result23" readonly></td>
+                        <td class="clr"><input type="text" id="result24" readonly></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="container" >
+            <table class="footer">
+                <tr>
+                    <td>Total Rate Per Mile	</td>
+                    <td>Total Rate Per Day</td>
+                    <td>Total Rate</td>
+                </tr>
+                <tr >
+                    <td class="avg"><input type="text" id="final1" readonly></td>
+                    <td class="avg"><input type="text" id="final2" readonly></td>
+                    <td class="avg"><input type="text" id="final3" readonly></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
